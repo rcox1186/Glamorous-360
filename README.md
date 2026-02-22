@@ -1,88 +1,141 @@
-# Glamorous 360 - Venue Booking Page
+# Glamorous 360 - Venue Booking Platform
 
-A modern, interactive venue booking page featuring a 360-degree panoramic viewer and elegant booking form.
+A modern, elegant venue booking application featuring 360-degree panoramic venue previews and seamless reservation management.
 
 ## Features
 
-✨ **360-Degree Panoramic Viewer** - Explore the venue with Pannellum viewer
-📅 **Easy Date & Time Selection** - Intuitive booking form with date/time inputs
-🎨 **Modern Design** - Responsive, glamorous UI with smooth interactions
-✅ **Form Validation** - Prevents past date bookings and ensures required fields
-📱 **Mobile Responsive** - Works seamlessly on all screen sizes
-🚀 **Production Ready** - Includes error handling, loading states, and success feedback
+✨ **360-Degree Panoramic Viewer** - Explore venues with immersive panoramic images
+📅 **Smart Date Selection** - Prevents past date bookings automatically
+⏰ **Time Selection** - Easy time slot picking for your event
+✅ **Real-time Validation** - Instant feedback on your booking details
+📱 **Fully Responsive** - Works beautifully on desktop, tablet, and mobile devices
+🎨 **Modern UI** - Glassmorphism design with smooth animations and transitions
+♿ **Accessible** - Built with accessibility standards (WCAG) in mind
 
-## Installation
+## Tech Stack
 
+- **React 18** - UI framework
+- **Pannellum** - 360-degree panoramic viewer library
+- **CSS3** - Modern styling with gradients and animations
+- **JavaScript ES6+** - Modern JavaScript features
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-# Install dependencies
+git clone https://github.com/rcox1186/Glamorous-360.git
+cd Glamorous-360
+```
+
+2. Install dependencies:
+```bash
 npm install
+```
 
-# Start development server
+3. Start the development server:
+```bash
 npm start
+```
 
-# Build for production
-npm build
+The application will open at `http://localhost:3000`
+
+## Project Structure
+
+```
+Glamorous-360/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── BookingPage.jsx
+│   │   └── BookingPage.css
+│   ├── index.js
+│   ├── index.css
+│   └── App.js
+├── package.json
+└── README.md
 ```
 
 ## Usage
 
-The BookingPage component is your main entry point. It displays:
-- A 360-degree panoramic view of the venue on the left
-- A booking form on the right for date/time selection
-
-### Key Components
-
-- **BookingPage.jsx** - Main component with form logic and 360 viewer
-- **BookingPage.css** - Responsive styling with glassmorphism effects
-
-## Technology Stack
-
-- React 18.2.0
-- Pannellum 2.5 (360 viewer)
-- CSS3 with responsive design
-- Modern JavaScript (ES6+)
-
-## API Integration
-
-The booking form is ready to connect to your backend. Update the fetch URL in `handleBooking()`:
-
-```javascript
-const response = await fetch('/api/bookings', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ date: bookingDate, time: bookingTime })
-});
-```
+1. **View the Venue** - Use the 360 panoramic viewer to explore the venue from all angles
+2. **Select a Date** - Choose your preferred booking date (minimum tomorrow)
+3. **Select a Time** - Pick the time for your event
+4. **Confirm Reservation** - Submit your booking request
+5. **Receive Confirmation** - Get instant feedback on your booking
 
 ## Customization
 
-### Change the Panorama Image
+### Change the Panoramic Image
 
-Edit the panorama URL in `BookingPage.jsx`:
-
+Edit `src/components/BookingPage.jsx` line 23:
 ```javascript
-panorama: "https://your-image-url.jpg"
+panorama: "YOUR_360_IMAGE_URL_HERE",
+```
+
+### Update Venue Title
+
+Edit the title in the same file (line 24):
+```javascript
+title: "Your Venue Name",
 ```
 
 ### Customize Colors
 
-Modify the CSS variables in `BookingPage.css`:
+Modify the CSS in `src/components/BookingPage.css` to match your branding
 
-```css
-background: #007bff; /* Primary color */
+## Backend Integration
+
+To connect to your backend API, update the `handleBooking` function in `BookingPage.jsx`:
+
+```javascript
+const response = await fetch('YOUR_API_ENDPOINT', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    date: bookingDate, 
+    time: bookingTime 
+  })
+});
 ```
+
+## Available Scripts
+
+### `npm start`
+Runs the app in development mode at `http://localhost:3000`
+
+### `npm build`
+Builds the app for production to the `build` folder
+
+### `npm test`
+Launches the test runner in interactive watch mode
 
 ## Browser Support
 
-- Chrome/Edge 88+
-- Firefox 85+
-- Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT
+This project is open source and available under the MIT License.
 
-## Author
+## Support
 
-Created by rcox1186
+For support, please open an issue on the GitHub repository.
+
+---
+
+**Built with ❤️ for glamorous events**
